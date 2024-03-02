@@ -1,1 +1,177 @@
+HACKERRANK---1...BIRTHDAY CAKE CANDLES:
+SOLN:
 
+n=int(input())
+arr=list(map(int,input().split()))
+a=sorted(arr) 
+b=max(a)
+ll=[]
+for i in range(len(a)):
+    if a[i]==b:
+        ll.append(a[i])
+print(len(ll))
+
+2.A VERY BIG SUM:
+
+SOLN:
+
+n=int(input())
+arr=list(map(int, input().split()))
+a=0
+for i in arr:
+    a+=i
+print(a)
+
+
+3.DIAGONAL DIFFERENCE:
+
+SOLN:
+
+def diagonalDifference(arr):
+    n=len(arr)
+    l2r=0
+    r2l=0
+    for i in range(n):
+        l2r+=arr[i][i]
+        r2l+=arr[i][n-i-1]
+    return abs(l2r-r2l)
+
+
+
+4.PLUS MINUS:
+SOLN:
+
+n = int(input().strip())
+list = list(map(int, input().strip().split()))
+count1=0
+count2=0
+count3=0
+for j in range(len(list)):
+    if list[j]>0:
+        count1+=1
+    elif list[j]<0:
+        count2+=1
+    elif list[j]==0:
+        count3+=1
+print(count1/n)
+print(count2/n)
+print(count3/n) 
+
+5.MINI-MAX SUM:
+SOLN:
+
+def miniMaxSum(arr):
+    mini=sum(sorted(arr)[:4])
+    maxi=sum(sorted(arr)[-4:])
+    return ('{} {}'.format(mini,maxi))
+
+arr = list(map(int, input().rstrip().split()))
+
+print(miniMaxSum(arr))
+
+
+6.Staircas:
+
+soln:
+n=int(input())
+m=" "
+t=1
+while n>0:
+    print((n-1)*m+t*("#"))
+    n=n-1
+    t=t+1
+
+7.TIME CONVERSION:
+
+soln:
+
+def timeConversion(s):
+    if s[-2:]=='AM' and s[:2]=='12':
+        return '00'+s[2:-2]
+    elif s[-2:]=='AM':
+        return s[:-2]
+    elif s[-2:]=='PM' and s[:2]=='12':
+        return s[:-2]
+    else:
+        return  str(int(s[:2])+12)+s[2:8]
+
+8.GRADING STUDENTS:
+
+SOLN:
+def gradingStudents(grades):
+    res=[]
+    for i in grades:
+        if i>=38:
+            a=i%5
+            if a>=3:
+                i+=(5-a)
+        res.append(i)
+    return res
+
+10.APPLE AND ORANGE:
+
+SOLN:
+s,t=map(int,input().split())
+a,b=map(int,input().split())
+m,n=map(int,input().split())
+apples=list(map(int,input().split()))
+oranges=list(map(int,input().split()))
+aa=[]
+ora=[]
+la=[]
+lo=[]
+
+for i in apples:
+    o=a+i
+    aa.append(o)
+for j in oranges:
+    oo=b+j
+    ora.append(oo)
+for k in aa:
+    if k>=s and k<=t:
+        la.append(k)
+for m in ora:
+    if m<=t and m>=s:
+        lo.append(m)
+print(len(la))
+print(len(lo))
+
+11.NUMBER LINE JUMPS:
+
+SOLN:
+
+def kangaroo(x1, v1, x2, v2):
+    
+    if (v1 > v2) and (x2 - x1) % (v2 - v1) == 0:
+        return "YES"
+    else:
+        return "NO"
+12.BIG SORTING:
+
+SOLN:
+n = int(input().strip())
+data = [input().strip() for i in range(n)]
+data.sort(key = lambda x: (len(x), x))
+for v in data:
+     print(v)
+
+13.FINDING ELEMENT AND RETRIVE THE INDEX OF THE ELEMENT:
+
+SOLN:
+v=int(input())
+size=int(input())
+arr=list(map(int,input().split()))
+arr.sort()
+for i in range(len(arr)):
+    if v==arr[i]:
+        print(i)
+14.INSERTION SORT:
+SOLN:
+
+def insertionsort(n,arr):
+    for i in range(0,len(arr)):
+        s=arr[len(arr)-1]
+    return(s)
+n=int(input())
+arr=list(map(int,input().split()))
+print(insertionsort(n,arr))
